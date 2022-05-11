@@ -1,18 +1,15 @@
+const express = require('express');
 const app = express();
-
-const fs = require('fs');
-const path = require('path');
-
-const htmlRoutes = require('./server')
 
 const PORT = process.env.PORT || 3001;
 
+const htmlRoutes = require('./routes/htmlRoutes');
 
-app.get('/api/animals', (req, res) => {
-    res.send('Hello!');
-});
+app.use(express.static('public'));
 
-app.listen(3001, () => {
+app.use('/', htmlRoutes);
+
+app.listen(PORT, () => {
     console.log(`API server now on port 3001!`);
 });
 

@@ -10,20 +10,20 @@ router.get('/notes', (req, res) => {
 
     res.sendFile(dbFilePath);
 
-    // fs.readFile(dbFilePath, 'UTF-8', (err, data) => {
-    //     if (err) throw err
-    //     console.log(data);
-    //     res.json(data);
-    // });
-
-
 });
 
 
 router.post('/notes', (req, res) => {
 
+    let newNote = {
+        title: req.body.title,
+        text: req.body.text,
+        id: (notesArray.length + 1)
+    };
 
-    notesArray.push(req.body);
+    notesArray.push(newNote);
+
+    console.log(notesArray);
 
     content = JSON.stringify(notesArray);
 

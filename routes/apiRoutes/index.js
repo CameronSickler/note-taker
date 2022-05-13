@@ -9,9 +9,16 @@ router.get('/notes', (req, res) => {
     fs.readFile(path.join(__dirname, '../../db/db.json'), 'UTF-8', (err, data) => {
         if (err) throw err
         console.log(data);
-    })
+    });
 
-    // res.json(notes);
+    // res.json(data);
+
+
+
+    // fs.writeFile('./notes', data, function (err) {
+    //     if (err) throw err;
+    //     console.log('Saved!');
+    // });
 
 });
 

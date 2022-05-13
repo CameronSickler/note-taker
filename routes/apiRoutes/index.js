@@ -4,9 +4,12 @@ const router = require('express').Router();
 
 const dbFilePath = path.join(__dirname, '../../db/db.json');
 
+var notesArray = [];
+
 router.get('/notes', (req, res) => {
 
     res.sendFile(dbFilePath);
+
     // fs.readFile(dbFilePath, 'UTF-8', (err, data) => {
     //     if (err) throw err
     //     console.log(data);
@@ -17,12 +20,21 @@ router.get('/notes', (req, res) => {
 });
 
 
-// router.post('/notes', (req, res) => {
+router.post('/notes', (req, res) => {
 
-//     console.log(req.body);
-//     res.json(req.body);
 
-// });
+    notesArray.push(req.body);
+
+    content = JSON.stringify(notesArray);
+
+    fs.writeFile(dbFilePath, content, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+    });
+
+    res.json(dbFilePath);
+
+});
 
 
 module.exports = router;

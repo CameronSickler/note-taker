@@ -18,14 +18,16 @@ router.post('/notes', (req, res) => {
     let newNote = {
         title: req.body.title,
         text: req.body.text,
-        id: (notesArray.length + 1)
+        id: JSON.stringify(notesArray.length + 1)
     };
+
+    console.log(newNote);
 
     notesArray.push(newNote);
 
-    console.log(notesArray);
-
     content = JSON.stringify(notesArray);
+
+    console.log(notesArray)
 
     fs.writeFile(dbFilePath, content, function (err) {
         if (err) throw err;
@@ -36,9 +38,13 @@ router.post('/notes', (req, res) => {
 
 });
 
+//still working on delete functionality
+
+// router.delete('/notes', (req, res) => {
+
+//     console.log(req.body);
+//     res.json(dbFilePath);
+
+// });
 
 module.exports = router;
-
-//fs readfile does a string. Will need to covert to usable data type
-
-// with the router.get, router.post needs to use fs.writeFile to push content to db.json

@@ -27,7 +27,7 @@ router.post('/notes', (req, res) => {
 
     content = JSON.stringify(notesArray);
 
-    console.log(notesArray)
+    console.log(notesArray);
 
     fs.writeFile(dbFilePath, content, function (err) {
         if (err) throw err;
@@ -40,11 +40,10 @@ router.post('/notes', (req, res) => {
 
 //still working on delete functionality
 
-// router.delete('/notes', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
 
-//     console.log(req.body);
-//     res.json(dbFilePath);
+    res.send(req.params);
 
-// });
+});
 
 module.exports = router;

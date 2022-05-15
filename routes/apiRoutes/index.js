@@ -18,7 +18,7 @@ router.post('/notes', (req, res) => {
     let newNote = {
         title: req.body.title,
         text: req.body.text,
-        id: JSON.stringify(notesArray.length + 1)
+        id: JSON.stringify(notesArray.length)
     };
 
     console.log(newNote);
@@ -38,11 +38,27 @@ router.post('/notes', (req, res) => {
 
 });
 
-//still working on delete functionality
+
 
 router.delete('/notes/:id', (req, res) => {
 
-    res.send(req.params);
+    let deleteByID = req.params.id
+
+    console.log("this is notes array " + notesArray)
+    let indexToDelete = notesArray.findIndex(o => o.id === deleteByID)
+
+    notesArray.splice(indexToDelete, 1);
+
+    content = JSON.stringify(notesArray);
+
+    console.log("this is notes array after splice " + notesArray);
+
+    fs.writeFile(dbFilePath, content, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+    });
+
+    res.json(dbFilePath);
 
 });
 

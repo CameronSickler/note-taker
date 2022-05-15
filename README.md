@@ -42,7 +42,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
  
 ### Walkthrough Video Link
  
-insert here
+https://www.youtube.com/watch?v=OBvOFZKq-g8
  
 ===============================
  

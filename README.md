@@ -1,16 +1,16 @@
 # Note Taker
  
- ### User Story
+### User Story
  
- AS A small business owner
+AS A small business owner
  
 I WANT to be able to write and save notes
  
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
  
-=============================
+===============================
  
- ### Acceptance Criteria
+### Acceptance Criteria
   
 GIVEN a note-taking application
  
@@ -40,14 +40,29 @@ THEN I am presented with empty fields to enter a new note title and the note’s
  
 ===============================
  
- ### Walkthrough Video Link
-  
+### Walkthrough Video Link
+ 
 insert here
  
- ### My Profile Information
+===============================
  
- CameronSickler
+#### Link to Deployed Application on Heroku
+ 
+ Link to Deployed Appliction on Heroku:
+https://calm-dusk-47855.herokuapp.com/
+ 
+ Link to GitHub Repository
+https://github.com/CameronSickler/note-taker
+ 
+===============================
+ 
+### My Profile Information
+ 
+GitHub: CameronSickler
+LinkedIn: linkedin.com/in/cameron-sickler-a17764106
+ 
+===============================
+ 
+### Resources
 
- ### Resources
-
- NPM    Heroku  Bootstrap
+ NPM    Heroku   Bootstrap
